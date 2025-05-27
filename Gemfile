@@ -32,4 +32,9 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "dotenv"
+
+  gem "rspec-rails", "~> 8.0.0"
 end
+
+gem "faker"
+gem "oj"
