@@ -44,6 +44,18 @@ RSpec.describe Post, type: :model do
       expect(post).not_to be_valid
       expect(post.errors[:ip]).to include("can't be blank")
     end
+
+    it "is invalid with IPv6 address" do
+      post = Post.new(title: "Title", body: "Body", ip: "2001:0db8:85a3:0000:0000:8a2e:0370:7334", user: user)
+      expect(post).not_to be_valid
+      expect(post.errors[:ip]).to include("must be a valid IP address")
+    end
+
+    it "is invalid with IP-like garbage" do
+      post = Post.new(title: "Title", body: "Body", ip: "256.256.256.256", user: user)
+      expect(post).not_to be_valid
+      expect(post.errors[:ip]).to include("must be a valid IP address")
+    end
   end
 
   describe "associations" do
