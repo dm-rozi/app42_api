@@ -15,7 +15,13 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :posts, only: [ :create ]
+      resources :posts, only: [ :create ] do
+        resources :ratings, only: [ :create ]
+        collection do
+          get :top
+          get :shared_ips
+        end
+      end
     end
   end
 end
