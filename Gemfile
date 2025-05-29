@@ -39,3 +39,4 @@ group :development, :test do
 end
 
 gem "oj"
+gem "faraday"
