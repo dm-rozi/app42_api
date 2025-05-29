@@ -34,10 +34,10 @@ RSpec.describe "GET /api/v1/posts/shared_ips", type: :request do
 
     expect(json["data"].size).to eq(2)
     expect(json["page_info"]).to eq({
-      "page" => 1,
-      "limit" => 2,
-      "has_next_page" => true
-    })
+                                      "page" => 1,
+                                      "limit" => 2,
+                                      "has_next_page" => true
+                                    })
   end
 
   it "returns next_page: false when on last page" do
