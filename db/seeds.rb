@@ -7,13 +7,9 @@
 # It uses Faker to generate random data and Faraday for HTTP requests.
 # The script also tracks the number of successful and failed requests and real time RPS.
 
-require "active_record"
 require "faraday"
 require "faker"
-require "faraday"
 require "oj"
-require "set"
-require "concurrent-ruby"
 
 ActiveRecord::Base.connection.execute("TRUNCATE users, posts, ratings RESTART IDENTITY CASCADE")
 Faker::UniqueGenerator.clear
