@@ -6,12 +6,14 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV["PG_USER"] %>
   password: <%= ENV["PG_PASSWORD"] %>
-  host: 127.0.0.1
+  host: <%= ENV["PG_HOST"] %>
   port: 5432
 
 development:
   <<: *default
   database: <%= ENV["PG_DB"] %>
+  pool: <%= ENV["PG_CONNECTION_POOL_SIZE"] %> 
+
 
 test:
   <<: *default
