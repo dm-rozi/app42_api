@@ -4,10 +4,14 @@
 
 A Rails API app for generating and rating posts using high-throughput concurrent seeds.
 
+## Out of scope
+No any auth logic. No frontend UI. No any CI/CD customization.
+
 ## Requirements
 
 - Ruby 3.4+
 - PostgreSQL
+- Rspec
 
 ## Setup
 
@@ -133,9 +137,9 @@ curl -X GET "http://localhost:3000/api/v1/posts/top?page=4&limit=7
 
 Query Parameters:
 
-page (optional, integer): Pagination offset
+ * page (optional, integer): Pagination offset
 
-limit (optional, integer): Number of top posts to return. Default is 50, max is 250 records
+ * limit (optional, integer): Number of top posts to return. Default is 50, max is 250 records
 
 ```json
 {
@@ -182,9 +186,9 @@ curl -X GET "http://localhost:3000/api/v1/posts/top?page=4&limit=7
 
 Query Parameters:
 
-page (optional, integer): Pagination offset
+ * page (optional, integer): Pagination offset
 
-limit (optional, integer): Number of records to return. Default is 50, max is 100 records
+ * limit (optional, integer): Number of records to return. Default is 50, max is 100 records
 
 ```json
 {
