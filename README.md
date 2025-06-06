@@ -9,7 +9,7 @@ No any auth logic. No frontend UI. No any CI/CD customization.
 
 ## Requirements
 
-- Ruby 3.4+
+- Ruby 3.4.4
 - PostgreSQL
 - Rspec
 
